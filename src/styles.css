@@ -1,0 +1,29 @@
+:root {
+  color-scheme: dark;
+  font: 16px/1.5 system-ui, sans-serif;
+  background: #132521;
+  color: #f2f8f3;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  padding-top: calc(2rem + env(safe-area-inset-top));
+  padding-left: calc(1.5rem + env(safe-area-inset-left));
+  padding-right: calc(1.5rem + env(safe-area-inset-right));
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.platform {
+  margin: 0.5rem 0 0;
+  color: #b1d3c3;
+}
