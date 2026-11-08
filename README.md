@@ -1,14 +1,16 @@
 # Smart Home Mobile
 
-React and TypeScript starter for the Smart Home iPhone and Android apps. Vite builds the shared UI and Capacitor packages it in the native projects under `ios/` and `android/`. The starter screen shows the platform reported by the Capacitor bridge.
+The iPhone and Android apps ship a local build of the Smart Home React dashboard. The `dashboard` submodule pins the Smart Home Service revision used by the Dell frontend. The app uses the dashboard’s existing API client with `http://homeassistant.dom:8080` as its default server.
+
+Connect to your home Wi-Fi and enter your existing Smart Home service access key in the dashboard’s connection screen. On iPhone, allow local network access when prompted.
 
 ## Run locally
 
-Use Node 22.22.2+ on the 22.x line, or Node 24.15 or newer. For iOS, use Xcode 26 or newer. For Android, install Android Studio and the Android 36 SDK, and select JDK 21 as the Gradle JDK.
+Use Node 22.22.2+ on the 22.x line, or Node 24.15 or newer, and pnpm 11. For iOS, use Xcode 26 or newer. For Android, install Android Studio and the Android 36 SDK, and select JDK 21 as the Gradle JDK.
 
 ```sh
 npm ci
-npm run dev
+npm run setup:dashboard
 ```
 
 Build and copy the web bundle into both native projects.
@@ -24,6 +26,6 @@ npm run ios
 npm run android
 ```
 
-Re-run `npm run sync` after changing the web UI or adding a Capacitor plugin. The starter bundle ID is `com.chmurawedy.smarthome`.
+Re-run `npm run sync` after updating the dashboard revision or adding a Capacitor plugin. Use `npm run dev` to preview the dashboard in a desktop browser. Its browser requests use Dell’s CORS settings. The app bundle ID is `com.chmurawedy.smarthome`.
 
-The native templates start at iOS 15 and Android API 24. The web build targets iOS 15 and Chromium 111. Use an up-to-date Android System WebView when testing older Android devices.
+Use iOS 16.4 or newer and an Android System WebView based on Chromium 111 or newer for the dashboard.

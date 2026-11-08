@@ -4,6 +4,11 @@ const config: CapacitorConfig = {
   appId: 'com.chmurawedy.smarthome',
   appName: 'Smart Home',
   webDir: 'dist',
+  plugins: {
+    CapacitorHttp: {
+      enabled: true,
+    },
+  },
 };
 
 export default config;
